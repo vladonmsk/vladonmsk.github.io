@@ -68,3 +68,49 @@ body{
 	margin-top: 10px;
 	margin-left: 40px;
 }
+.map{
+	visibility: hidden;
+}
+.maps{
+	visibility: visible;
+}
+.preloader{
+	background: white;
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	position: absolute;
+	margin-left: -10px;
+	opacity: 1;
+	transition: 1s all;
+	visibility: visible;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);: 
+	
+}
+.loader{
+		width: 75px;
+		height: 75px;
+		border: 10px solid gray;
+		border-radius: 50%;
+		border-top-color: white;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		animation: 1s load infinite linear;
+}
+.done{
+	opacity: 0!important;
+	visibility: hidden!important;
+}
+@keyframes load{
+	from{
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to{
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
