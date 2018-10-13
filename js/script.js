@@ -1,10 +1,5 @@
 document.body.onload = function () {
-	setTimeout(function() {
-		var preloader = document.getElementById('preload');
-		var map = document.getElementById('maps');
-		preloader.className = 'done';
-		map.className = 'maps';
-	}, 1000);
+
     var hour = 0;
     var minute = 0;
     var second = 0;
@@ -36,9 +31,8 @@ document.body.onload = function () {
         }
         timer.innerHTML = "0" + hour + " часов " + "0" + minute + " минут " + "0" + second + " секунд";
     }
-    //while(true){
-    setTimeout(TimerClock, 1000);
-	//}
+    setInterval(TimerClock, 1000);
+
 
     $('#rezume').on('click', function (e) {
         e.preventDefault();
@@ -51,6 +45,12 @@ document.body.onload = function () {
         $('#content_rezume').hide();
         $('#content_map').show();
         $('#content_timer').hide();
+        setTimeout(function() {
+            var preloader = document.getElementById('preload');
+            var map = document.getElementById('maps');
+            preloader.className = 'done';
+            map.className = 'maps';
+        }, 1000);
     });
     $('#timer1').on('click', function (e) {
         e.preventDefault();
